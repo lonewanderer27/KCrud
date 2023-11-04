@@ -50,6 +50,16 @@ public class SQLiteDB extends SQLiteOpenHelper {
         return rs.moveToFirst();
     }
 
+    public boolean RecordExists(String fName, String mName, String lName, int ignoreRecordIndex) {
+        SQLiteDatabase conn = this.getReadableDatabase();
+        String[] Columns = {PROF_FNAME, PROF_MNAME, PROF_LNAME};
+        String selection = PROF_FNAME + " = ? AND " + PROF_MNAME + " = ? AND " + PROF_LNAME + " = ? AND " + PROF_ID + " != ?";;
+        String[] selectionArgs = {fName, mName, lName};
+
+        rs = conn.query(PROFILE, Columns, selection, selectionArgs, null, null, null);
+        return rs.moveToFirst();
+    }
+
     public boolean AddRecord(String fName, String mName, String lName) {
         SQLiteDatabase conn = this.getWritableDatabase();
         VALUES = new ContentValues();

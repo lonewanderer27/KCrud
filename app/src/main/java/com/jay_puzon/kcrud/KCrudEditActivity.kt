@@ -84,8 +84,8 @@ class KCrudEditActivity : AppCompatActivity() {
                 }
             }
 
-            // check if the new values conflict with existing record
-            if (Conn!!.RecordExists(names[0], names[1], names[2])) {
+            // check if the new values conflict with existing record (except for the current record)
+            if (Conn!!.RecordExists(names[0], names[1], names[2], id)) {
                 Log.i("BtnUpdate", "Conflicts with existing record!");
                 Toast.makeText(this, "Conflicts with existing record!", Toast.LENGTH_LONG).show()
                 return@setOnClickListener;
