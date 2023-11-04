@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-public class Records extends ListActivity {
+public class KCrudRecords extends ListActivity {
     SQLiteDB Conn;
     ArrayList<String> ItemList;
 
@@ -49,7 +49,7 @@ public class Records extends ListActivity {
         String[] recordData = Conn.GetRecord(Conn.ItemsId.get(position));
 
         // Create an intent to call the next activity
-        Intent CallEdit = new Intent(".JobAlleyEditRecord");
+        Intent CallEdit = new Intent(".KCrudEditActivity");
 
         // Pass the data to the next activity
         CallEdit.putExtra(SQLiteDB.PROF_ID, Conn.ItemsId.get(position));

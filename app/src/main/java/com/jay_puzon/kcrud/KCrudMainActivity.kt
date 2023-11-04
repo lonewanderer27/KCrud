@@ -35,7 +35,7 @@ class KCrudMainActivity : AppCompatActivity() {
         BtnView!!.setOnClickListener {
             Log.i("JobAlleyMainActivity", "BtnView clicked!")
 
-            val callRecords = Intent(this, Records::class.java)
+            val callRecords = Intent(this, KCrudRecords::class.java)
             startActivity(callRecords)
         }
 

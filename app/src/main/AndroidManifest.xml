@@ -13,11 +13,16 @@
         android:theme="@style/Theme.KCrud"
         tools:targetApi="31" >
         <activity
-            android:name=".Records"
+            android:name=".KCrudRecords"
             android:exported="true" />
         <activity
             android:name=".KCrudEditActivity"
-            android:exported="true" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name=".KCrudEditActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".KCrudMainActivity"
             android:exported="true" >
