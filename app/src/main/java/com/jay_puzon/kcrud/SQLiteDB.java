@@ -54,7 +54,7 @@ public class SQLiteDB extends SQLiteOpenHelper {
         SQLiteDatabase conn = this.getReadableDatabase();
         String[] Columns = {PROF_FNAME, PROF_MNAME, PROF_LNAME};
         String selection = PROF_FNAME + " = ? AND " + PROF_MNAME + " = ? AND " + PROF_LNAME + " = ? AND " + PROF_ID + " != ?";;
-        String[] selectionArgs = {fName, mName, lName};
+        String[] selectionArgs = {fName, mName, lName, String.valueOf(ignoreRecordIndex)};
 
         rs = conn.query(PROFILE, Columns, selection, selectionArgs, null, null, null);
         return rs.moveToFirst();
