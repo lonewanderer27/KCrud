@@ -8,46 +8,72 @@
     android:padding="20dp"
     tools:context=".KCrudMainActivity">
 
+    <TextView
+        android:text="First Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
     <EditText
         android:id="@+id/fName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="First Name"
         android:textSize="20sp"></EditText>
+
+    <TextView
+        android:text="Middle Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
 
     <EditText
         android:id="@+id/mName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Middle Name"
         android:textSize="20sp"></EditText>
+
+    <TextView
+        android:text="Last Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
 
     <EditText
         android:id="@+id/lName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Last Name"
         android:textSize="20sp"></EditText>
 
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Record"
+        android:text="Insert Record"
         android:textSize="20sp"></Button>
 
-    <Button
-        android:id="@+id/btnView"
-        android:layout_marginTop="10dp"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="View Records"
-        android:textSize="20sp"></Button>
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnView"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Records"
+            android:textSize="18sp"></Button>
 
-    <Button
-        android:id="@+id/btnClear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Delete Records"
-        android:textSize="20sp"></Button>
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear Records"
+            android:textSize="18sp"></Button>
+    </LinearLayout>
 </LinearLayout>

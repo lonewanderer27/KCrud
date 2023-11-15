@@ -42,15 +42,15 @@ class KCrudMainActivity : AppCompatActivity() {
         BtnDelete!!.setOnClickListener {
             if (!Conn!!.NotEmpty()) {
                 Log.i("DeleteRecords", "No records to delete")
-                Toast.makeText(this, "No records to delete", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Empty records", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             if (Conn!!.DeleteRecords()) {
                 Log.i("DeleteRecords", "All records have been deleted!")
-                Toast.makeText(this, "Records have been deleted!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Records have been cleared!", Toast.LENGTH_SHORT).show()
             } else {
-                Log.e("DeleteRecords", "Error on deleting records!")
+                Log.e("DeleteRecords", "Error on clearing records!")
                 Toast.makeText(
                     this,
                     "There has been an error on deleting records!",
@@ -81,14 +81,14 @@ class KCrudMainActivity : AppCompatActivity() {
             // check if there's existing record, if there is, don't add
             if (Conn!!.RecordExists(names[0], names[1], names[2])) {
                 Log.i("AddRecord", "Record already exists");
-                Toast.makeText(this, "Record already exists", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Conflicts with existing record", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener;
             }
 
             // check if adding the record was successful
             if (Conn!!.AddRecord(names[0], names[1], names[2])) {
                 Log.i("AddRecord", "Record saving successful!");
-                Toast.makeText(this, "Record saving successful!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Record saved!", Toast.LENGTH_SHORT).show()
 
                 // clear all edit text fields
                 nameFields.forEach { editText ->
@@ -96,7 +96,7 @@ class KCrudMainActivity : AppCompatActivity() {
                 }
             } else {
                 Log.e("AddRecord", "Record saving unsuccessful!");
-                Toast.makeText(this, "Record saving unsuccessful!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Record not saved!", Toast.LENGTH_SHORT).show()
             }
         }
     }

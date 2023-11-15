@@ -7,40 +7,66 @@
     android:padding="20dp"
     tools:context=".KCrudEditActivity">
 
+    <TextView
+        android:text="First Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
     <EditText
         android:id="@+id/fName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="First Name"
-        android:textSize="20sp" />
+        android:textSize="20sp"></EditText>
+
+    <TextView
+        android:text="Middle Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
 
     <EditText
         android:id="@+id/mName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Middle Name"
-        android:textSize="20sp"/>
+        android:textSize="20sp"></EditText>
+
+    <TextView
+        android:text="Last Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
 
     <EditText
         android:id="@+id/lName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Last Name"
-        android:textSize="20sp"/>
+        android:textSize="20sp"></EditText>
 
-    <Button
-        android:id="@+id/btnUpdate"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Update Record"
-        android:textSize="20sp"/>
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:id="@+id/btnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update Record"
+            android:textSize="15sp"/>
 
-    <Button
-        android:id="@+id/btnDelete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Delete Record"
-        android:textSize="20sp" />
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete Record"
+            android:textSize="15sp" />
+    </LinearLayout>
 
     <Button
         android:layout_marginTop="10dp"

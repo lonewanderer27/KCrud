@@ -57,11 +57,11 @@ class KCrudEditActivity : AppCompatActivity() {
             // delete the entry in db, check if it's successful
             if (Conn!!.DeleteRecord(id)) {
                 Log.i("BtnEdit", "Record deleted!");
-                Toast.makeText(this, "Record deleted!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Record has been deleted!", Toast.LENGTH_SHORT).show()
                 finish()
             } else {
                 Log.i("BtnEdit", "Record deletion unsuccessful!");
-                Toast.makeText(this, "Record deletion unsuccessful!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Unsuccessful in deleting record", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -87,7 +87,7 @@ class KCrudEditActivity : AppCompatActivity() {
             // check if the new values conflict with existing record (except for the current record)
             if (Conn!!.RecordExists(names[0], names[1], names[2], id)) {
                 Log.i("BtnUpdate", "Conflicts with existing record!");
-                Toast.makeText(this, "Conflicts with existing record!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Conflicts with another record", Toast.LENGTH_LONG).show()
                 return@setOnClickListener;
             }
 
@@ -100,11 +100,11 @@ class KCrudEditActivity : AppCompatActivity() {
             )
             if (success) {
                 Log.i("BtnEdit", "Record updated!");
-                Toast.makeText(this, "Record updated!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Record has been updated!", Toast.LENGTH_SHORT).show()
                 finish()
             } else {
                 Log.i("BtnEdit", "Error saving changes");
-                Toast.makeText(this, "Error saving changes", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Error saving updated record", Toast.LENGTH_SHORT).show()
             }
         }
     }
